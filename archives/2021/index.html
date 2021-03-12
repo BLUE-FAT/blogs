@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="/blogs/css/style.css">
 
 
+  <!-- 统计 -->
   <script>
     var _hmt = _hmt || [];
     (function () {
@@ -31,16 +32,36 @@
         <a href="/blogs/" id="logo">蓝胖的博客</a>
       </h1>
       
-        <h2 id="subtitle-wrap">
-          <a href="/blogs/" id="subtitle">高山仰止，景行行止 虽不能至，然心向往之</a>
-        </h2>
+      <h2 id="subtitle-wrap">
+        <a href="/blogs/" id="subtitle"></a>
+        <!-- 打字机效果 -->
+        <script src="//wow.techbrood.com/libs/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/typed.js/2.0.5/typed.js"></script>
+<script>
+  var typed = new Typed("#subtitle", {
+    // 注意：输出的可以是标签,将标签当节点运行.比如下面的h1
+    // 这是一个字符串数组,可以填充多个值,使用引号修饰,使用逗号分割
+    strings: ["<h1> 高山仰止，景行行止 虽不能至，然心向往之 <h1>"],
+    // 速度值越小打字速度越快
+    typeSpeed: 80,
+    // 用于在在输出字符结尾闪烁的符号
+    cursorChar: ""
+  });
+  // 设置页面加载完成时再开始打字
+  typed.stop();
+  $(document).ready(function () {
+    typed.start();
+  });
+</script>
+
+      </h2>
       
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"></a>
         
-          <a class="main-nav-link" href="/blogs/">首页</a>
+        <a class="main-nav-link" href="/blogs/">首页</a>
         
       </nav>
     </div>
