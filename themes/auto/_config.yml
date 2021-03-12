@@ -1,9 +1,9 @@
 # Menu-Sidebar
 menu:
   首页: /
-  # 归档: /archives
-  # 分类: /categories
-  # 标签: /tags
+  归档: /archives
+  分类: /categories
+  标签: /tags
   # 关于: /about
 rss: /atom.xml
 banner: "images/banner_sky.jpg"
