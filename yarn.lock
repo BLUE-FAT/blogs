@@ -603,6 +603,11 @@ hexo-server@^2.0.0:
     open "^7.0.0"
     serve-static "^1.14.1"
 
+hexo-theme-ayer@^1.8.15:
+  version "1.8.15"
+  resolved "https://registry.yarnpkg.com/hexo-theme-ayer/-/hexo-theme-ayer-1.8.15.tgz#53bf20460dcb33a6c7882e551d712f4d9957aba9"
+  integrity sha512-7rUFDy4DBGEyPBjEyAkKSuGWkc9XLNExgLyroMt/CHYOiEYfqJF4dtAtFSi74xi8dncn+oAK+lj5Rk0l6SRSUQ==
+
 hexo-theme-landscape@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/hexo-theme-landscape/-/hexo-theme-landscape-0.0.3.tgz#87d1f4d613da9be5245dad0d4b80479eab70d386"
@@ -1230,6 +1235,11 @@ tslib@^2.0.3:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
   integrity sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
+
+typed.js@^2.0.11:
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/typed.js/-/typed.js-2.0.11.tgz#d298a91f959f11a3803bf48b841a6fadd29640d9"
+  integrity sha512-1ZORHalEyLob34q738mqmwp0pT6syMigB1SZuTItqdhovWBKFIt7I5uVALXAGQZCg2MCtihCt6uqkoqPJK+9iQ==
 
 unpipe@~1.0.0:
   version "1.0.0"
