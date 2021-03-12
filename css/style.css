@@ -180,7 +180,7 @@ body {
   left: -140px;
 }
 #main {
-  margin-bottom: 150px !important;
+  min-height: 435px;
 }
 @media screen and (min-width: 768px) {
   #main {
@@ -1077,8 +1077,6 @@ a.article-title:hover {
   padding: 25px 0;
   border-top: 1px solid #ddd;
   color: #999;
-  position: fixed;
-  bottom: 0;
   width: 100%;
 }
 #footer a {
