@@ -5,9 +5,9 @@
 # Site
 title: 蓝胖的博客
 subtitle: "高山仰止，景行行止 虽不能至，然心向往之"
-description: "归纳与总结"
+description: "前端 归纳与总结"
 keywords:
-author: blue-fat
+author: Blue-Fat
 language: zh-CN
 timezone: ""
 
@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: auto
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
