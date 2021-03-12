@@ -179,6 +179,9 @@ body {
 .mobile-nav-on #wrap {
   left: -140px;
 }
+#main {
+  margin-bottom: 150px !important;
+}
 @media screen and (min-width: 768px) {
   #main {
     display: inline;
@@ -1071,9 +1074,12 @@ a.article-title:hover {
 }
 #footer {
   background: #262a30;
-  padding: 50px 0;
+  padding: 25px 0;
   border-top: 1px solid #ddd;
   color: #999;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 #footer a {
   color: #258fb8;
