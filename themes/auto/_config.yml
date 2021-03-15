@@ -4,6 +4,7 @@ menu:
   归档: /archives
   分类: /categories/hexo
   标签: /tags/hexo
+  留言: https://github.com/BLUE-FAT/blogs/issues
   # 关于: /about
 rss: /atom.xml
 banner: "images/banner_sky.jpg"
