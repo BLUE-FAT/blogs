@@ -116,21 +116,8 @@
 <li><p>URL 符合规则，浏览器进程会通过进程通信将 URL 请求发送给网络进程，网络进程会依次查找 Memory Cache、Disk Cache 中是否有缓存内容，有且没过期则使用，否则则发送网络请求。</p>
 </li>
 <li><p>网络请求第一步就是先进行 DNS 解析，获取请求域名服务器的 IP 地址。</p>
-<blockquote><p>什么是 DNS 解析，每台计算机都有一个唯一 IP 地址，但是 IP 地址不方便记忆，所以采用更方便记忆的网址去查找其他计算机，将网址转换成 IP 地址的过程就是 DNS 解析。</p>
-<p>域名解析是一个递归查询 + 迭代查询的过程。</p>
-<blockquote>
-<ul>
-<li>浏览器缓存，向浏览器的缓存中读取上一次的访问记录</li>
-<li>操作系统的缓存，查找存储在系统运行内存中的缓存</li>
-<li>在 host 文件中查找</li>
-<li>路由器缓存：有些路由器会把访问过的域名存在路由器上</li>
-<li>ISP 互联网服务提供商缓存，比如 114.114.114.114</li>
-<li>缓存中找不到，则本地 DNS 服务器进行迭代查询：. 根 DNS 服务器 -&gt; .com 顶级服务器 -&gt; 主域名服务器 -&gt; …，直到服务器返回对应的 IP</li>
-</ul>
-</blockquote>
-<blockquote>
-<p>DNS 负载均衡：<br>网站对应的 IP 不止一个，DNS 可以根据每台机器的负载量、距离用户的距离等返回一个合适的服务器 IP 给用户，这个过程就是 DNS 负载均衡，又叫做 DNS 重定向。 CDN 就是利用 DNS 的重定向技术， DNS 会返回一个用户最接近的点的 IP 给用户。</p>
-</blockquote>
+<blockquote><p>什么是 DNS 解析，每台计算机都有一个唯一 IP 地址，但是 IP 地址不方便记忆，所以采用更方便记忆的网址去查找其他计算机，将网址转换成 IP 地址的过程就是 DNS 解析。<br>域名解析是一个递归查询 + 迭代查询的过程。</p>
+<p>浏览器缓存，向浏览器的缓存中读取上一次的访问记录<br>操作系统的缓存，查找存储在系统运行内存中的缓存<br>在 host 文件中查找<br>路由器缓存：有些路由器会把访问过的域名存在路由器上<br>ISP 互联网服务提供商缓存，比如 114.114.114.114<br>缓存中找不到，则本地 DNS 服务器进行迭代查询：. 根 DNS 服务器 -.com 顶级服务器 -主域名服务器 -…，直到服务器返回对应的 IP<br>DNS 负载均衡：<br>网站对应的 IP 不止一个，DNS 可以根据每台机器的负载量、距离用户的距离等返回一个合适的服务器 IP 给用户，这个过程就是 DNS 负载均衡，又叫做 DNS 重定向。 CDN 就是利用 DNS 的重定向技术， DNS 会返回一个用户最接近的点的 IP 给用户。</p>
 </blockquote></li>
 <li><p>拿到 IP 地址发起 HTTP 请求。</p>
 </li>
@@ -139,15 +126,14 @@
 <li><p>TCP 连接建立之后，浏览器端会构建请求行、 请求头等信息，并把和该域名相关的 Cookie 等数据附加到请求头中，然后向服务器发送构建的请求信息。</p>
 </li>
 <li><p>服务器检查 HTTP 请求头是否包含缓存验证信息进行协商缓存。</p>
-<blockquote>
 <p>协商缓存</p>
 <ul>
 <li>Last-Modified 和 If-Modified-Since：<br>Last_Modified 表示本地文件的最后修改时间，If-Modified-Since 会将 Last-Modified 的值发送给服务器询问该资源是否有更新，如果有更新就会将新的资源发送回来，否则返回 304 状态码，代表资源无更新，继续使用缓存文件。<br>Last-Modified 弊端：<br>如果文件只是被打开，没有修改，也会造成 Last-Modified 修改，服务器不能命中缓存。<br>只能以秒计时，如果在毫秒级的时间内修改了文件，服务器 Last-Modified 的值并不会修改，会返回 304，浏览器就会是自己的缓存。</li>
 <li>ETag 和 If-No-Match<br>ETag 是文件指纹，If-No-Match 会将 ETag 发送给服务器，查询该资源 ETag 是否变动，有变动的话就将新的资源发送回来。ETag 优先级高于 Last-Modified。</li>
 </ul>
-</blockquote>
-<blockquote>
 <p>状态码</p>
+<blockquote>
+</blockquote>
 <ul>
 <li>1xx：指示信息——表示请求已经接受，继续处理<br>100 Continue 一般在发送 post 请求时，已发送了 http header 之后服务端返回此信息，表示确认，之后发送具体参数信息。</li>
 <li>2xx：成功<br>200 OK 正常返回信息<br>201 Created 请求成功并且服务器创建了新的资源<br>202 Accepted 服务器已接受请求，但尚未处理</li>
@@ -155,7 +141,6 @@
 <li>4xx：客户端错误<br>400 Bad Request 服务器无法理解请求格式<br>401 Unauthorized 请求未授权<br>403 Forbidden 禁止访问<br>404 Not Found 找不到与 URI 相匹配的资源</li>
 <li>5xx：服务器错误。<br>500 Internal Server Error 服务器内部错误<br>503 Service Unavailable 服务器暂时无法处理请求</li>
 </ul>
-</blockquote>
 </li>
 <li><p>数据传输完后，如果请求头或响应头里没有 connection: keep-alive，则需要四次挥手断开 TCP 连接，否则会保持连接通道，这样下一次在发送请求，就无需再次 TCP 三次握手了，节省了网络通信时间。</p>
 </li>
@@ -191,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blue-fat.github.io/blogs/2021/12/07/%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90URL%E8%BE%93%E5%85%A5%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E5%85%A8%E8%BF%87%E7%A8%8B%E5%8F%8A%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" data-id="ckwwvihcf0001ykvyhjynar1c" data-title="全面解析URL输入到页面加载全过程及性能优化" class="article-share-link">分享</a>
+      <a data-url="https://blue-fat.github.io/blogs/2021/12/07/%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90URL%E8%BE%93%E5%85%A5%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E5%85%A8%E8%BF%87%E7%A8%8B%E5%8F%8A%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" data-id="ckwwvnx4v000108vyga00d8f7" data-title="全面解析URL输入到页面加载全过程及性能优化" class="article-share-link">分享</a>
       
       
       
@@ -248,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blue-fat.github.io/blogs/2021/03/12/hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E9%A2%98%E6%89%93%E5%AD%97%E6%9C%BA%E6%95%88%E6%9E%9C/" data-id="ckwwvihc30000ykvy9bwk8fr4" data-title="hexo添加标题打字机效果" class="article-share-link">分享</a>
+      <a data-url="https://blue-fat.github.io/blogs/2021/03/12/hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E9%A2%98%E6%89%93%E5%AD%97%E6%9C%BA%E6%95%88%E6%9E%9C/" data-id="ckwwvnx4j000008vy9k25ah5t" data-title="hexo添加标题打字机效果" class="article-share-link">分享</a>
       
       
       
